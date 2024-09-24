@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Organization tutorial</title>
+    </head>
+    <body>
+        <h1>Organization elements!</h1>
+
+        <div class="container">
+            <h2>Lists</h2>
+            <p>
+                <h4>Unordered List</h4>
+                <i>Lists should be written only with tag "li"!</i>
+                <ul>
+                    <li>First element</li>
+                    <li>Second element</li>
+                    <li>Third element</li>
+                </ul>
+            </p>
+            <p>
+                <h4>Ordered List</h4>
+                <i>with ordered list we can use the "start" attribute, for example it will be "10".</i>
+                <br>
+                <b>tTo rewrite tag, just use the tag double click + "Ctrl + D"!</b>
+                <ol start="10">
+                    <li>First element</li>
+                    <li>Second element</li>
+                    <li>Third element</li>
+                </ol>
+            </p>
+        </div>
+
+        <div class="container">
+            <h2>Tables</h2>
+            <p>
+                <h3>Default table</h3>
+                <table border="2" cellspacing="10" cellpadding="5">
+                    <caption>Table title</caption>
+                    <tr>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                    <tr>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                    </tr>
+                </table>
+            </p>
+
+            <p>
+                <h3>Super table</h3>
+                <table border="10" cellspacing="20" cellpadding="5" >
+                    <caption>My coins per day</caption>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Coins</th>
+                            <th>Progress</th>
+                            <th>Degradate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>500 coins</td>
+                            <td>12%</td>
+                            <td>-6%</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>10 coins</td>
+                            <td>18%</td>
+                            <td>-3%</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total:</td>
+                            <td colspan="3">510 coins</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </p>
+        </div>
+
+        <div class="container">
+            <p>
+                <h3>Mega Table!</h3>
+                <table border="1">
+                    <tr>
+                        <th rowspan="2">Region</th>
+                        <th colspan="3">Middle ZP</th>
+                    </tr>
+                    <tr>
+                        <th>Low</th>
+                        <th>Medium</th>
+                        <th>High</th>
+                    </tr>
+                    <tr>
+                        <th>MSC</th>
+                        <td>12.000</td>
+                        <td>50.000</td>
+                        <td>120.000</td>
+                    </tr>
+                    <tr>
+                        <th>Kras</th>
+                        <td>8.000</td>
+                        <td>30.000</td>
+                        <td>80.000</td>
+                    </tr>
+                </table>
+            </p>
+
+        </div>
+    </body>
+</html>
