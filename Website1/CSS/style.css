@@ -1,0 +1,25 @@
+body{
+  display: block;
+  background-color: aqua;
+}
+
+h1{
+  font-size: 32px;
+  font-style: italic;
+}
+
+h1, h2{
+  font-weight:500;
+}
+
+.container{
+  background-color: blue;
+}
+
+*{
+  color: purple;
+}
+
+#first-element{
+  color: brown;
+}
