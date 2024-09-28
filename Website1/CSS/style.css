@@ -16,6 +16,60 @@ h1, h2{
   background-color: blue;
 }
 
+.container .table-1{
+  background-color: palegreen;
+  width: 512px;
+}
+
+.container .table-1 tr{
+  background-color: yellow;
+  max-width: 512px;
+}
+
+.parent{
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.child{
+  background-color: brown;
+  min-height: 300px;
+  width: 33.33%;
+  border: 8px outset rgb(163, 120, 62);
+  border-radius: 20px;
+}
+
+html{
+  font-size: 15px;
+}
+.text-block{
+  font-size: 50px;
+}
+
+.text-block p{
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+
+div{
+  margin: 10px 15px;
+}
+
+.padding-block{
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+span{
+  display: inline-block;
+  margin: 0px 10px 20px 0px;
+}
+
+div, span{
+  background-color: burlywood;
+}
+
 *{
   color: purple;
 }
