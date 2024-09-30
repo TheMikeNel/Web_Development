@@ -1,0 +1,64 @@
+.header{
+  z-index: 1000;
+  position: fixed;
+  background-color: gray;
+  border-radius: 30px;
+  min-height: 50px;
+  width: 99%;
+}
+
+.header-title{
+  display: inline-block;
+  margin: 1rem;
+}
+
+.header-nav{
+  display: inline-block;
+}
+
+.header-list{
+  display: inherit;
+  padding: 0;
+}
+
+.header-list li{
+  display: inline-block;
+  padding: 20px 10px;
+}
+
+.main-container{
+  background-color: aqua;
+  padding: 100px 30px;
+  border-radius: 30px;
+  width: 100%;
+  min-height: 3000px;
+}
+
+.test-figure{
+  float: left;
+  position: relative;
+  display: inline-block;
+  width: 128px;
+  height: 128px;
+}
+
+.main-img{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.sticker-img{
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 30%;
+  height: 30%;
+}
+
+.overflow-block{
+  max-width: 300px;
+  max-height: 200px;
+  padding: 15px;
+  overflow: auto;
+}
