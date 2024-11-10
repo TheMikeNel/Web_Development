@@ -1,7 +1,7 @@
 .header{
   z-index: 1000;
   position: fixed;
-  background-color: gray;
+  background-color: rgba(52, 94, 108, 0.8);
   border-radius: 30px;
   min-height: 50px;
   width: 99%;
@@ -22,6 +22,7 @@
 }
 
 .header-list li{
+  text-decoration: overline;
   display: inline-block;
   padding: 20px 10px;
 }
@@ -57,8 +58,33 @@
 }
 
 .overflow-block{
+  color: white;
+  background-color: gray;
+  background-image: linear-gradient(to left top, blue, red);
+  background-image: url("../Images/decorate-1.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  cursor:cell;
+
   max-width: 300px;
   max-height: 200px;
   padding: 15px;
   overflow: auto;
+}
+
+.text{
+  display: inline-block;
+  padding: 0 12% 0;
+  outline: red solid 5px;
+  text-shadow: 0px 0px 5px rebeccapurple;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: .85;
+  letter-spacing: -1px;
+  text-indent: 1em;
+  white-space: pre ;
 }

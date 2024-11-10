@@ -36,8 +36,10 @@ h1, h2{
   background-color: brown;
   min-height: 300px;
   width: 33.33%;
-  border: 8px outset rgb(163, 120, 62);
-  border-radius: 20px;
+  border: 8px solid rgb(163, 120, 62);
+  /* border-radius: 20px; */
+  border-radius: 30px;
+  border-top-right-radius: 0px;
 }
 
 html{
