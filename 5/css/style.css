@@ -218,7 +218,6 @@ body {
 
 .modules-title-1{
   color: #3f2aff;
-  margin-top: 9px;
   margin-bottom: 50px;
 }
 
@@ -230,32 +229,37 @@ body {
 
 .module-cards-list{
   margin: 0;
+  margin-bottom: 50px;
   padding: 0;
+  font-size: 0;
 }
 
 .module-card{
-  overflow: hidden;
   display: inline-block;
-  width: 570px;
-  height: 505px;
+  vertical-align: top;
+  width: 572px;
+  min-height: 505px;
   padding-top: 180px;
   background-position: top;
   background-repeat: no-repeat;
   box-shadow: 0px 0px 15px rgba(50, 50, 50, 0.2);
-}
-
-.module-card-txt{
-  margin: 25px;
-  position: relative;
-  height: 275px;
-}
-
-.module-card:not(:nth-child(2n)){
-  margin: 0 25px 25px 0;
+  margin-bottom: 25px;
+  margin-right: 25px;
 }
 
 .module-card:nth-child(2n){
-  margin-bottom: 25px;
+  margin-right: 0;
+}
+
+.module-card:last-child,
+.module-card:nth-last-child(2){
+  margin-bottom: 0;
+}
+
+.module-card-txt{
+  position: relative;
+  padding: 25px;
+  height: 325px;
 }
 
 .module-card-1{
@@ -277,28 +281,23 @@ body {
 .module-list{
   font-size: 20px;
   list-style-type: none;
-  margin: 6px 0;
   padding: 0;
   color: #333;
-}
-
-.module-lesson{
-  margin-bottom: 13px;
+  line-height: 165%;
 }
 
 .card-num{
   font-size: 40px;
   color: #eaeaea;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 25px;
+  right: 25px;
 }
 
 .show-more-btn{
   display: block;
   padding: 25px 76px;
   margin: 0 auto;
-  margin-top: 25px;
   border: solid 2px;
   font-size: 18px;
   font-weight: bold;

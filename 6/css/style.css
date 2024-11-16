@@ -18,10 +18,92 @@ img {
 }
 
 body {
-	font-family: Arial, Verdana, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .container{
   margin: 0 auto;
-  width: 1170px;
+  margin-top: 30px;
+  max-width: 1170px;
+}
+
+.page-header{
+  position: relative;
+  margin: 30px 0;
+  height: 54px;
+}
+
+.logo{
+  display: inline-block;
+  margin-right: 40px;
+}
+
+.main-phone{
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  font-size: 20px;
+  font-weight: 450;
+  color: #666;
+}
+
+.link{
+  font-size: 16px;
+  color: #c93;
+}
+
+.account-link{
+  display: inline-block;
+  position: absolute;
+  top: 30%;
+  right: 0;
+  padding-left: 26px;
+  background-image: url(../img/to_account_arrow.svg);
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.main-nav{
+  height: 70px;
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.nav-list{
+  list-style: none;
+  margin: 0;
+  padding-left: 45px;
+}
+
+.nav-li{
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.nav-li:not(:last-child){
+  margin-right: 45px;
+}
+
+.nav-btns{
+  position: absolute;
+  top: 15%;
+  right: 0;
+}
+
+.link-btn{
+  margin: 0;
+  border: 2px solid #c93;
+  border-radius: 10px;
+  padding: 13px 20px;
+  display: inline-block;
+}
+
+.link-btn:not(:last-child){
+  margin-right: 40px;
+}
+
+.header-2{
+  font-size: 40px;
+  font-weight: normal;
 }
