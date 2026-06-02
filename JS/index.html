@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .block-input {
+            display: block;
+        }
+    </style>
+
+    <form action="#" method="post" autocomplete="on" name="user-form" id="user-form">
+        <div>
+            <label>
+                Username:
+                <input id="username" type="text" name="username" placeholder="Enter your username">
+            </label>
+        </div>
+        
+        <div>
+            <label>
+                Email:
+                <input id="email" type="email" name="email" placeholder="e-mail">
+            </label>
+        </div>
+
+        <div>
+            Sex:
+            <label>
+                <input type="radio" name="sex" value="male"> Male
+            </label>
+            <label>
+                <input type="radio" name="sex" value="female"> Female
+            </label>
+        </div>
+        
+        <div>
+            <label>
+                Service rating: <output id="rating-output"></output>
+                <input type="range" name="rating" id="rating-input" min="1" max="10" value="10" step="1">
+            </label> 
+        </div>
+
+        <div>
+            Your hobbies:
+            <ul class="checkbox-list">
+                <li><label><input type="checkbox" name="hobbies" value="sports"> Sports</label></li>
+                <li><label><input type="checkbox" name="hobbies" value="music"> Music</label></li>
+                <li><label><input type="checkbox" name="hobbies" value="reading"> Reading</label></li>
+                <li><label><input type="checkbox" name="hobbies" value="traveling"> Traveling</label></li>
+            </ul>
+            <label>
+
+            </label>
+        </div>
+
+        <div>
+            Additive comments:
+            <label class="comment-block">
+                <input type="text" name="comment" placeholder="Leave a comment">
+            </label>
+        </div>
+
+        <input type="submit" name="submit" class="submit-input" value="Send">
+    </form>
+
+    <script src="form.js"></script>
+</body>
+</html>
