@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>CREATE YOUR OWN CARD</h1>
+    <form action="#" method="post" autocomplete="on" name="card-form" id="card-form">
+        <div class="input-group">
+            <label>
+                Custom text:
+                <input id="custom-text-input" type="text" name="custom-text" placeholder="Enter custom text" maxlength="20">
+            </label>
+        </div>
+
+        <div class="input-group">
+            <label for="color-choice">Choice your color:</label>
+            <select name="color-choice" id="color-choice">
+                <option value="color-1" selected>Red sky</option>
+                <option value="color-2">Bright night</option>
+                <option value="color-3">Fresh grass</option>
+            </select>
+        </div>
+        
+        <div class="input-group">
+            <input type="submit" name="submit" class="submit-input" value="Approve">
+
+        </div>
+    </form>
+
+    <div id="card-container">
+        <div id="customization-container">
+            <p id="custom-text">your text</p>
+        </div>
+
+        <p id="card-number">1234 5678 9101 2345</p>
+    </div>    
+
+    <script src="form.js"></script>
+</body>
+</html>

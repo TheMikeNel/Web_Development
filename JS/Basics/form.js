@@ -13,7 +13,7 @@ ratingInputEl.addEventListener('input', () => {
 const formData = {
     username: 'new_user',
     email: '',
-    sex: '',
+    gender: '',
     rating: 1,
     hobbies: [],
     comment: '',

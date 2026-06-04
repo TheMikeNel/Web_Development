@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Post cost calculation</h1>
+    <form action="#" method="post" autocomplete="on" name="post-form" id="post-form">
+        <div>
+            <label>
+                Product name:
+                <input id="product-name" type="text" name="name" placeholder="Enter product name">
+            </label>
+        </div>
+        
+        <div>
+            <label>
+                Weight (kg):
+                <input id="weight" type="number" name="weight" placeholder="Enter weight" step="0.01" min="0">
+            </label>
+        </div>
+
+        <div>
+            <label>
+                Distance (km):
+                <input id="distance" type="number" name="distance" placeholder="Enter distance" step="0.1" min="0">
+            </label>
+        </div>
+        <input type="submit" name="submit" class="submit-input" value="Add product">
+    </form>
+
+    <table class="product-table">
+        <thead>
+            <tr>
+                <th>Product name</th>
+                <th>Weight (kg)</th>
+                <th>Distance (km)</th>
+                <th>Delivery cost</th>
+            </tr>
+        </thead>
+        <tbody class="product-table-container">
+            <!-- Здесь будут добавляться товары -->
+        </tbody>
+    </table>
+
+    <script src="form.js"></script>
+</body>
+</html>
