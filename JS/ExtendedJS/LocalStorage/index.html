@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="section">
+            <form id="film-form" action="post" novalidate autocomplete="off">
+                <label class="input-container">Name:
+                    <input id="name-input" class="form-input" type="text" name="name" required>
+                </label>
+                
+                <label class="input-container">Genre:
+                    <input id="genre-input" class="form-input" type="text" name="genre" required>
+                </label>
+                
+                <label class="input-container">Year:
+                    <input id="year-input" class="form-input" type="number" step="1" name="year" required>
+                </label>
+
+                <label class="input-container">
+                    <input id="watched-input" type="checkbox" name="watched">
+                    Already watched?
+                </label>
+
+                <button class="film-submit" type="submit">Add</button>
+            </form>
+        </div>
+
+        <div class="section">
+            <select name="year-filter" id="year-filter">
+                <option disabled selected>- select a year -</option>
+            </select>
+            <button>
+                Sort
+            </button>
+            <table>
+                <thead>
+                    <tr class="film-table-header">
+                        <td>Name</td>
+                        <td>Genre</td>
+                        <td>Year</td>
+                        <td>Already watched?</td>
+                        <td>Actions</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Add items -->
+                     <tr class="film-table-row">
+                        <td>Test</td>
+                        <td>Test</td>
+                        <td>Test</td>
+                        <td>Test</td>
+                        <td>Test</td>
+                     </tr>
+                     <tr class="film-table-row">
+                        <td>Test</td>
+                        <td>Test</td>
+                        <td>Test</td>
+                        <td>Test</td>
+                        <td>Test</td>
+                     </tr>
+                     <tr class="film-table-row">
+                        <td>Test</td>
+                        <td>Test</td>
+                        <td>Test</td>
+                        <td>Test</td>
+                        <td>Test</td>
+                     </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
