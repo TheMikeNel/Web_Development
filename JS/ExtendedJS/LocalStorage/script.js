@@ -3,75 +3,151 @@ const nameInput = document.querySelector('#name-input');
 const genreInput = document.querySelector('#genre-input');
 const yearInput = document.querySelector('#year-input');
 const watchedInput = document.querySelector('#watched-input');
-
+const submitBtn = document.querySelector('.film-submit');
+const selectEl = document.querySelector("#year-filter");
+const sortBtn = document.querySelector('#sort-btn');
 const tableBody = document.querySelector('table tbody');
 
-const filmData = {
-    name: '',
-    genre: '',
-    year: '',
-    isWatched: '',
-    isValid: function() {
-        return this.name && this.genre && this.year;
-    }
+let filmsArr = JSON.parse(localStorage.getItem('filmsArr')) || [];
+let currentYearFilter = '';
+let isSort = false;
+let editingId = null;
+
+function saveToStorage() {
+    localStorage.setItem('filmsArr', JSON.stringify(filmsArr));
 }
 
-function addNewFilm(film){
-    const newRow = document.createElement('tr');
-    newRow.className = 'film-table-row';
+function renderTable() {
+    tableBody.innerHTML = '';
 
-    for (const key in film){
-        const cell = document.createElement('td');
-        cell.textContent = film[key];
-        newRow.appendChild(cell);
+    let currentFilms = [...filmsArr]; 
+    if (currentYearFilter) {
+        currentFilms = currentFilms.filter(film => film.year === currentYearFilter);
     }
 
-    const editBtn = document.createElement('button');
-    editBtn.textContent = "Edit"
-    const deleteBtn = document.createElement('button');
-    deleteBtn.textContent = "Delete"
-    const actionCell = document.createElement('td');
-    actionCell.appendChild(editBtn);
-    actionCell.appendChild(deleteBtn);
-    newRow.appendChild(actionCell);
+    if (isSort) {
+        currentFilms.sort((a, b) => +a.year - +b.year);
+    }
 
-    deleteBtn.addEventListener('click', function () {
-        newRow.remove();
+    currentFilms.forEach(film => {
+        const newRow = document.createElement('tr');
+        newRow.className = 'film-table-row';
+
+        newRow.innerHTML = `
+            <td>${film.name}</td>
+            <td>${film.genre}</td>
+            <td>${film.year}</td>
+            <td>${film.isWatched}</td>
+            <td>
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+            </td>
+        `;
+
+        newRow.querySelector('.delete-btn').addEventListener('click', () => {
+            deleteFilm(film.id);
+        });
+
+        newRow.querySelector('.edit-btn').addEventListener('click', () => {
+            startEdit(film);
+        });
+
+        tableBody.appendChild(newRow);
     });
-
-    editBtn.addEventListener('click', function () {
-        nameInput.value = filmName;
-        genreInput.value = filmGenre;
-        yearInput.value = filmYear;
-        watchedInput.checked = isWatched === 'Yes';
-
-        newRow.remove();
-    });
-
-    tableBody.appendChild(newRow);
 }
+
+function updateYearFilter() {
+    selectEl.innerHTML = '<option value="">- select a year -</option>';
+    
+    const uniqueYears = [...new Set(filmsArr.map(f => f.year))].sort((a, b) => b - a);
+
+    uniqueYears.forEach(year => {
+        const option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+        if (year === currentYearFilter) option.selected = true;
+        selectEl.appendChild(option);
+    });
+}
+
+function deleteFilm(id) {
+    filmsArr = filmsArr.filter(film => film.id !== id);
+    
+    if (editingId === id) resetForm(); 
+    
+    saveToStorage();
+    updateYearFilter();
+    renderTable();
+}
+
+function startEdit(film) {
+    editingId = film.id;
+    nameInput.value = film.name;
+    genreInput.value = film.genre;
+    yearInput.value = film.year;
+    watchedInput.checked = film.isWatched === 'Yes';
+    
+    submitBtn.textContent = "Update Film";
+}
+
+function resetForm() {
+    editingId = null;
+    formEl.reset();
+    submitBtn.textContent = "Add Film";
+}
+
+[nameInput, genreInput, yearInput].forEach(input => {
+    input.addEventListener('input', () => input.setCustomValidity(''));
+});
 
 formEl.addEventListener('submit', function (event) {
     event.preventDefault();
-    const filmObj = Object.create(filmData);
+    
+    const name = nameInput.value.trim();
+    const genre = genreInput.value.trim();
+    const year = yearInput.value.trim();
 
-    filmObj.name = nameInput.value.trim();
-    if (filmObj.name.trim == '') {
-        nameInput.setCustomValidity("Value cannot be empty!")
-        formEl.reportVality();
-    }
-    else nameInput.setCustomValidity("Value cannot be empty!")
-
-    filmObj.genre = genreInput.value.trim();
-    filmObj.year = yearInput.value.trim();
-    filmObj.isWatched = genreInput.checked ? 'Yes' : 'No';
-
-    if (!filmObj.isValid) {
-        alert('Please fill in all text fields.');
+    if (!name || !genre || !year) {
+        if (!name) nameInput.setCustomValidity("Value cannot be empty!");
+        if (!genre) genreInput.setCustomValidity("Value cannot be empty!");
+        if (!year) yearInput.setCustomValidity("Value cannot be empty!");
+        formEl.reportValidity();
         return;
     }
 
-    addNewFilm(filmObj)
+    const filmData = {
+        name,
+        genre,
+        year,
+        isWatched: watchedInput.checked ? 'Yes' : 'No'
+    };
 
-    this.reset();    
+    if (editingId !== null) {
+        const index = filmsArr.findIndex(f => f.id === editingId);
+        if (index !== -1) {
+            filmsArr[index] = { ...filmsArr[index], ...filmData };
+        }
+    } else {
+        filmData.id = +new Date();
+        filmsArr.push(filmData);
+    }
+
+    resetForm();
+    saveToStorage();
+    updateYearFilter();
+    renderTable();
 });
+
+sortBtn.addEventListener('click', () => {
+    isSort = !isSort;
+    sortBtn.textContent = isSort ? "Clear Sort" : "Sort by Year";
+    renderTable();
+});
+
+selectEl.addEventListener('change', (e) => {
+    currentYearFilter = e.target.value;
+    renderTable();
+});
+
+renderTable();
+updateYearFilter();
