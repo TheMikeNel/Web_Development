@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="section">
+        <form id="film-form">
+            <label for="title">Название:</label>
+            <input type="text" class="text-input" id="title" name="title">
+            <label for="genre">Жанр:</label>
+            <input type="text" class="text-input" id="genre" name="genre">
+            <label for="release-year">Год:</label>
+            <input type="text" class="text-input" id="release-year" name="releaseYear">
+            <input type="checkbox" id="is-watched" name="isWatched">
+            <label for="is-watched">Просмотрен?</label>
+            <input class="submit" type="submit" value="Добавить фильм">
+        </form>
+    </div>
+
+    <div class="section film-actions">
+        <input type="text" id="filter-value" placeholder="Фильтр">
+        <select id="filter-field">
+            <option value="title">По названию</option>
+            <option value="genre">По жанру</option>
+            <option value="releaseYear">По году</option>
+            <option value="isWatched">По просмотру</option>
+        </select>
+        <button type="button" class="delete-button" id="delete-all-btn">Удалить все</button>
+    </div>
+
+    <div class="section">
+        <table id="film-table">
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Жанр</th>
+                    <th>Год</th>
+                    <th>Просмотрен?</th>
+                    <th>Действие</th>
+                </tr>
+            </thead>
+            <tbody id="film-tbody"></tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
